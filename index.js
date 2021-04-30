@@ -159,9 +159,16 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+const arrayOfReviewsByRating = [];
+
+function getReviewByRating(varObject, varRating){
+  for(let key of varObject){
+    if (key.rating >= varRating) {
+      arrayOfReviewsByRating.push(key);
+    }
   }
+  return arrayOfReviewsByRating;
+}
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
@@ -176,10 +183,16 @@ Use the getLongReviews function below to do the following:
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }
   ]
 */
+const reviewsWithLongFeedback = [];
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(varObject){
+  for(let key of varObject){
+    if (key["feedback"].split(" ").length >= 15) {
+      reviewsWithLongFeedback.push(key);
+    }
   }
+  return reviewsWithLongFeedback;
+}
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
@@ -200,10 +213,16 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
-}
+function carMaker(make, year, odometer){
+    this.make = make,
+    this.year = year,
+    this.odometer = odometer,
+    this.drive = drive
+  }
+  
+  function drive(milesDriven){
+      return this.odometer += milesDriven;
+  }
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
